@@ -44,7 +44,8 @@ if (!firebase.apps.length) {
 let current_lat = '';
 let current_lon = '';
 
-function getLoc()
+// get the current location
+function get_Loc()
 {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
@@ -73,9 +74,32 @@ function getLoc()
   }
 }
 
+//Write to firebase and update the start vaules
+function update_start_loc(current_lat, current_lon) {
+ firebase.firestore().collection("Users").doc("gkWaMtCQ2CTuSBBoM3jX").update({
+   'startLat': current_lat,
+   'startLon': current_lon
+ }).then(() => {
+
+console.log('Updated Start Lat/Lon');
+})
+}
+
+//Write to firebase and update the end vaules
+function update_end_loc(current_lat, current_lon) {
+  firebase.firestore().collection("Users").doc("gkWaMtCQ2CTuSBBoM3jX").update({
+    'endLat': current_lat,
+    'endLon': current_lon
+  }).then(() => {
+ 
+ console.log('Updated End Lat/Lon');
+ })
+ } 
+
+
 
 export default function App() {
-  getLoc()
+  get_Loc()
   return (
     <View style={styles.container}>
       {/**<Text>Open up App.js to start working on your app!</Text>
