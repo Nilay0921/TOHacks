@@ -5,9 +5,15 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import LoginPage from "./components/LoginPage";
 
+import SignupPage from "./components/SignupPage";
+
+
 import firebase from "firebase";
 import {distance} from './assets/distance';
 import * as Location from 'expo-location';
+
+import Navigator from './Routes/homeStack';
+
 
 var firebaseConfig = {
   apiKey: "AIzaSyCcKFBHuyG-vpL9FvzBCyN7Gtj0fwDCoSQ",
@@ -101,13 +107,15 @@ function update_end_loc(current_lat, current_lon) {
 export default function App() {
   get_Loc()
   return (
-    <View style={styles.container}>
-      {/**<Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-      <Text style={styles.paragraph}>{current_lat}, {current_lon}</Text>*/}
-    <LoginPage />
 
-    </View>
+    <Navigator/>
+    // <View style={styles.container}>
+    //   {/**<Text>Open up App.js to start working on your app!</Text>
+    //   <StatusBar style="auto" />
+    //   <Text style={styles.paragraph}>{current_lat}, {current_lon}</Text>*/}
+    // <SignupPage />
+
+    // </View>
   );
 }
 
