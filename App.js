@@ -78,10 +78,11 @@ export default function App() {
   getLoc()
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <LoginPage />
+      {/**<Text>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
-      <Text style={styles.paragraph}>{current_lat}, {current_lon}</Text>
+      <Text style={styles.paragraph}>{current_lat}, {current_lon}</Text>*/}
+    <LoginPage />
+
     </View>
   );
 }
