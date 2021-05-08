@@ -2,6 +2,9 @@ import React, { useState }  from 'react';
 
 import { StyleSheet, TextInput, View, ImageBackground, Dimensions, Button } from 'react-native';
 
+
+
+
 export default function SignupPage({navigation}) {
 
     const [name, setName] = useState("");
@@ -18,7 +21,7 @@ export default function SignupPage({navigation}) {
             <TextInput style={[styles.generalStyle, styles.inputtwo]} onChangeText={(email) => setEmail(email)}  placeholder="email"/> 
             <TextInput style={[styles.generalStyle, styles.inputthree]} secureTextEntry={true} onChangeText={(password) => setPassword(password)}  placeholder="password"/>
             <TextInput style={[styles.generalStyle, styles.inputfour]} secureTextEntry={true} onChangeText={(confPassword) => setConfPassword(confPassword)}  placeholder="password"/> 
-            <Button title="Submit" onPress={() => navigation.navigate("login")}></Button>
+            <Button title="Submit" onPress={() => navigation.navigate("leader")}></Button>
 
           </ImageBackground>
       </View>

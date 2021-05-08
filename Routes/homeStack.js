@@ -3,6 +3,7 @@ import { createAppContainer } from 'react-navigation';
 
 import LoginPage from './../components/LoginPage';
 import SignupPage from './../components/SignupPage';
+import LeadershipPage from './../components/LeadershipPage';
 
 const screens = {
   
@@ -15,6 +16,14 @@ const screens = {
   },  
   login: {
     screen: LoginPage,
+    navigationOptions: {
+      title: 'login',
+      headerShown: false
+    },
+  },
+
+  leader: {
+    screen: LeadershipPage,
     navigationOptions: {
       title: 'login',
       headerShown: false
