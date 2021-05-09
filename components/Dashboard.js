@@ -15,9 +15,9 @@ export default function Dashboard({navigation}) {
               } source={require('../assets/Images/Dashboard.png')}>
 
             
-            <Text style={{fontFamily: "Arial", fontSize: 25}}>Leaderboard</Text>
-            <Text style={{fontFamily: "Arial", fontSize: 25}}>Progress</Text>
-            <Text style={{fontFamily: "Arial", fontSize: 25}}>Friends List</Text>
+            <Text style={{fontFamily: "Roboto", fontSize: 25}}>Leaderboard</Text>
+            <Text style={{fontFamily: "Roboto", fontSize: 25}}>Progress</Text>
+            <Text style={{fontFamily: "Roboto", fontSize: 25}}>Friends List</Text>
 
             
             <Pressable style={styles.btnSignin} onPress={() => navigation.navigate("dash")}>
@@ -44,7 +44,7 @@ export default function Dashboard({navigation}) {
 
 
 
-              <Button title="aosidjaosidjas" onPress={() => navigation.navigate("sign")}></Button>
+              <Button title="aosidjaosidjas" onPress={() => navigation.navigate("start")}></Button>
       </ImageBackground>
 
     </View>

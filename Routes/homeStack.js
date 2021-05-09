@@ -7,6 +7,8 @@ import LeadershipPage from './../components/LeadershipPage';
 
 import Dashboard from './../components/Dashboard';
 
+import StartScreen from './../components/StartScreen';
+
 const screens = {
   login: {
     screen: LoginPage,
@@ -35,6 +37,14 @@ const screens = {
     screen: Dashboard,
     navigationOptions: {
       title: 'dash',
+      headerShown: false
+    }
+  },
+
+  start: {
+    screen: StartScreen,
+    navigationOptions: {
+      title: 'start',
       headerShown: false
     }
   },
