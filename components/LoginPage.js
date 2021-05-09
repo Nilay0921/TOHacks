@@ -37,8 +37,9 @@ export default function LoginPage({navigation}) {
             
             <Text style={styles.forgotPass}>Forgot password? Click here</Text>
             
-            <Pressable onPress={() => navigation.navigate("sign")}></Pressable>
-            <Text style={styles.signUPText}>Don't have an account? Sign Up</Text>
+            <Pressable style={styles.signupstuff} onPress={() => navigation.navigate("sign")}> 
+                <Text style={styles.signUPText}>Don't have an account? Sign Up</Text>
+            </Pressable>
 
 
           </ImageBackground>
@@ -54,6 +55,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         position: "relative",
        
+    },
+    signupstuff:{
+        paddingTop:10,
+        width:250,
+        height:30,
+        left:15,
     },
     signUPText:{
         top:-80,

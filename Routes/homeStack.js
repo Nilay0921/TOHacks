@@ -17,7 +17,7 @@ const screens = {
   leader: {
     screen: LeadershipPage,
     navigationOptions: {
-      title: 'login',
+      title: 'leader',
       headerShown: false
     },
   },
