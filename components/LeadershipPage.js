@@ -98,7 +98,7 @@ export default function LeadershipPage() {
             </DataTable.Row>
 
             <DataTable.Row>
-              <DataTable.Cell>Yujurva</DataTable.Cell>
+              <DataTable.Cell>Yajurva</DataTable.Cell>
               <DataTable.Cell numeric>10</DataTable.Cell>
             </DataTable.Row>
           </DataTable>

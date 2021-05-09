@@ -1,6 +1,6 @@
 import React, { useState }  from 'react';
 
-import { StyleSheet, TextInput, View, ImageBackground, Dimensions, Button } from 'react-native';
+import { StyleSheet, TextInput, View, ImageBackground,Pressable, Text } from 'react-native';
 
 
 
@@ -16,14 +16,20 @@ export default function SignupPage({navigation}) {
     return (
       <View style={styles.container}>
 
-          <ImageBackground style={{ width: 414, height: 900, alignItems: 'center',justifyContent: "center" }} source={require('../assets/Images/signup.png')}>
+          <ImageBackground style={{ position:"absolute", width: 414, height: 900, alignItems: 'center',justifyContent: "center" }} source={require('../assets/Images/signup.png')}>
+            <Text style={styles.signupTitle}>Sign Up</Text>
+
             <TextInput style={[styles.generalStyle, styles.inputone]} onChangeText={(name) => setName(name)}  placeholder="name"/> 
             <TextInput style={[styles.generalStyle, styles.inputtwo]} onChangeText={(email) => setEmail(email)}  placeholder="email"/> 
             <TextInput style={[styles.generalStyle, styles.inputthree]} secureTextEntry={true} onChangeText={(password) => setPassword(password)}  placeholder="password"/>
             <TextInput style={[styles.generalStyle, styles.inputfour]} secureTextEntry={true} onChangeText={(confPassword) => setConfPassword(confPassword)}  placeholder="password"/> 
-            <Button title="Submit" onPress={() => navigation.navigate("leader")}></Button>
-
+            
+            <Pressable style={styles.btnSignup} onPress={() => navigation.navigate("login")}>
+                <Text style={styles.btnSignupText}>sign up</Text>
+            </Pressable>
+           
           </ImageBackground>
+          
       </View>
   );
 }
@@ -35,27 +41,52 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  signupTitle:{
+    top:-132,
+    left:-35,
+    width:200,
+    fontSize:35,
+    fontWeight:"700",
+    color:"#41463D",
+    elevation:5
+},
+  btnSignupText:{
+    paddingTop:10,
+    alignSelf:"center",
+    textAlign:"center",
+    fontSize: 18,
+    fontWeight:"bold",
+    color:"rgba(255, 255, 255, 0.75)"
+  },
+  btnSignup:{
+    top:-50,
+    left:-60,
+    width:120,
+    height:50,
+    backgroundColor:"#41463D",
+    borderRadius:15
+  },
   inputone: {
     padding:0,
     width:253, 
     height:65, 
     left: 0, 
-    top:-140,
+    top:-100,
   },
   inputtwo: {
     padding:0,
-    top:-130,
+    top:-90,
     width:253, 
     height:65, 
     left: 0, 
   },
 
   inputthree: {
-    top: -120
+    top: -80
   },
 
   inputfour: {
-    top: -110
+    top: -70
   },
 
   generalStyle: {
