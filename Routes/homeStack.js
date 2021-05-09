@@ -6,7 +6,13 @@ import SignupPage from './../components/SignupPage';
 import LeadershipPage from './../components/LeadershipPage';
 
 const screens = {
-  
+  leader: {
+    screen: LeadershipPage,
+    navigationOptions: {
+      title: 'login',
+      headerShown: false
+    },
+  },
   sign: {
     screen: SignupPage,
     navigationOptions: {
@@ -16,14 +22,6 @@ const screens = {
   },  
   login: {
     screen: LoginPage,
-    navigationOptions: {
-      title: 'login',
-      headerShown: false
-    },
-  },
-
-  leader: {
-    screen: LeadershipPage,
     navigationOptions: {
       title: 'login',
       headerShown: false
