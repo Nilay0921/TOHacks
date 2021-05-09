@@ -14,10 +14,11 @@ export default function Dashboard({navigation}) {
               top:0 }
               } source={require('../assets/Images/Dashboard.png')}>
 
-            
+            <Text style={styles.dashboard}>Dashboard</Text>
+
                 <Image style={
                   {position:"relative", 
-                  top:10,
+                  top:-10,
                   left:-175,
                   width:25, 
                   height: 30,
@@ -26,10 +27,10 @@ export default function Dashboard({navigation}) {
                 </Image>
 
               <Pressable  onPress={() => navigation.navigate("leader")}>
-                <Text style={{top:0, left:-120,fontFamily: "Roboto", fontSize: 25, color:"#41463D"}}>Leaderboard</Text>
+                <Text style={{top:-20, left:-120,fontFamily: "Roboto", fontSize: 25, color:"#41463D"}}>Leaderboard</Text>
                 <Image style={
                   {position:"relative", 
-                  top:20,
+                  top:0,
                   width: 25, 
                   height: 25,
                   alignItems: 'center',
@@ -39,18 +40,18 @@ export default function Dashboard({navigation}) {
 
               <Image style={
                   {position:"relative", 
-                  top:-71,
+                  top:-91,
                   left:10,
                   width: 30, 
                   height: 30,
                   alignItems: 'center',
                   justifyContent: "center",}} source={require('../assets/Images/Progress.png')}>
                 </Image> 
-              <Text style={{top:-110, left:100,fontFamily: "Roboto", fontSize: 30, color:"#41463D"}}>Progress</Text>
+              <Text style={{top:-130, left:100,fontFamily: "Roboto", fontSize: 30, color:"#41463D"}}>Progress</Text>
               
               <Image style={
                   {position:"relative", 
-                  top:-105,
+                  top:-125,
                   left:30,
                   width: 75, 
                   height: 97,
@@ -60,7 +61,7 @@ export default function Dashboard({navigation}) {
 
                 <Image style={
                   {position:"relative", 
-                  top:-200,
+                  top:-223,
                   left:130,
                   width: 75, 
                   height: 97,
@@ -68,12 +69,12 @@ export default function Dashboard({navigation}) {
                   justifyContent: "center",}} source={require('../assets/Images/Weekly.png')}>
                 </Image> 
                 
-                <Pressable>
-                  <Text style={{top:-156, left:60,fontFamily: "Roboto", fontSize: 20, color:"#41463D"}}>Friend List</Text>
+                <Pressable style={styles.friendsList} onPress={() => navigation.navigate("friendlist")}>
+                  <Text style={{top:-32, left:10,fontFamily: "Roboto", fontSize: 20, color:"#41463D"}}>Friend List</Text>
                   <Image style={
                     {position:"relative", 
-                    top:-184,
-                    left:170,
+                    top:-60,
+                    left:120,
                     width: 44, 
                     height: 27,
                     alignItems: 'center',
@@ -82,11 +83,12 @@ export default function Dashboard({navigation}) {
 
                   <Image style={
                     {position:"relative", 
-                    top:-170,
-                    left:60,
+                    top:-50,
+                    left:10,
                     width: 25, 
                     height: 25,
                     alignItems: 'center',
+                    zIndex:180,
                     justifyContent: "center",}} source={require('../assets/Images/btn.png')}>
                   </Image> 
                 </Pressable>
@@ -136,6 +138,19 @@ btnStartText:{
     borderRadius:15,
     color:"#fff"
 },
+friendsList:{
+  top:-150,
+  left:50,
 
+},
+dashboard:{
+  top:-60,
+  left:-92,
+  width:190,
+  fontSize:35,
+  fontWeight:"700",
+  color:"#41463D",
+  elevation:5
+},
 
 });

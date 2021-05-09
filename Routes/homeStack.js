@@ -9,6 +9,8 @@ import Dashboard from './../components/Dashboard';
 
 import StartScreen from './../components/StartScreen';
 
+import FriendsList from './../components/FriendsList';
+
 const screens = {
   login: {
     screen: LoginPage,
@@ -48,6 +50,14 @@ const screens = {
       headerShown: false
     }
   },
+
+  friendlist:{
+    screen: FriendsList,
+    navigationOptions:{
+      title: 'friendlist',
+      headerShown: false
+    }
+  }
 }
 
   
