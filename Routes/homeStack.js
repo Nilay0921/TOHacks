@@ -48,9 +48,11 @@ const screens = {
       headerShown: false
     }
   },
+}
+
   
 
-}
+
 
 
 
