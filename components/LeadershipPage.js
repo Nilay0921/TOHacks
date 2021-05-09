@@ -23,7 +23,7 @@ export default function LeadershipPage() {
     <View style={styles.container}>
       <ScrollView>
       <ImageBackground style={{ position: "relative", width: Dimensions.get('window').width, height: 900, alignItems: 'center', justifyContent: "center", top: 0 }} source={require('../assets/Images/background.png')}>
-          <Text style={{fontFamily: 'monospace', color: 'rgb(55, 142, 122)'}}>Daily:</Text>
+          <Text style={{paddingTop:50, fontFamily: 'Roboto', color: '#41463D'}}>Daily:</Text>
           <LineChart
             data={{
               labels: ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'],
@@ -49,7 +49,7 @@ export default function LeadershipPage() {
               borderRadius: 16
             }}
           />
-          <Text style={{fontFamily: 'monospace',color: 'rgb(55, 142, 122)'}}>Monthly:</Text>
+          <Text style={{fontFamily: 'Roboto',color: '#41463D'}}>Monthly:</Text>
           <LineChart
             data={{
               labels: ['Jan', 'Feb', 'Mar', 'Apil', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
@@ -75,7 +75,7 @@ export default function LeadershipPage() {
               borderRadius: 16
             }}
           />
-          <Text style={{fontFamily: 'monospace',color: 'rgb(55, 142, 122)'}}>Leader Board:</Text>
+          <Text style={{fontFamily: 'Roboto', color: '#41463D'}}>Leader Board:</Text>
           <DataTable>
             <DataTable.Header>
               <DataTable.Title>Username</DataTable.Title>
