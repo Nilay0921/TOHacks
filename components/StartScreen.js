@@ -54,7 +54,7 @@ export default function StartScreen({ navigation }) {
                         onPress={() => {
                             setModalVisible(true);
                         }}>
-                        <Text style={styles.textStyle}>Show Modal</Text>
+                        <Text style={styles.textStyle}>Stop</Text>
                     </TouchableHighlight>
                 </View>
 
