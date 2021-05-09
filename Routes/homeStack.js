@@ -5,6 +5,8 @@ import LoginPage from './../components/LoginPage';
 import SignupPage from './../components/SignupPage';
 import LeadershipPage from './../components/LeadershipPage';
 
+import Dashboard from './../components/Dashboard';
+
 const screens = {
   login: {
     screen: LoginPage,
@@ -29,6 +31,13 @@ const screens = {
     },
   },  
   
+  dash: {
+    screen: Dashboard,
+    navigationOptions: {
+      title: 'dash',
+      headerShown: false
+    }
+  },
   
 
 }

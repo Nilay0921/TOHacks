@@ -30,7 +30,7 @@ export default function LoginPage({navigation}) {
             <TextInput style={styles.inputtwo} secureTextEntry={true} onChangeText={(password) => setPassword(password)}  placeholder="password"/> 
           
             
-            <Pressable style={styles.btnSignin} onPress={() => navigation.navigate("leader")}>
+            <Pressable style={styles.btnSignin} onPress={() => navigation.navigate("dash")}>
                 <Text style={styles.btnSigninText}>sign in</Text>
             </Pressable>
             
