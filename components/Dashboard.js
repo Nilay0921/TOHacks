@@ -92,7 +92,7 @@ export default function Dashboard({navigation}) {
                 </Pressable>
 
 
-            <Pressable style={styles.btnStart} onPress={() => navigation.navigate("dash")}>
+            <Pressable style={styles.btnStart} onPress={() => navigation.navigate("start")}>
                 <Text style={styles.btnStartText}>start tracking</Text>
                 <Image style={
                     {position:"relative", 
