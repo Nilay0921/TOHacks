@@ -1,9 +1,25 @@
 import React, { useState } from 'react';
 
-import { StyleSheet, Text, View, ImageBackground, TextInput, Pressable, Dimensions, Button, Image, Modal, Alert, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Pressable, Dimensions, Button, Image, Modal, Alert, TouchableHighlight } from 'react-native';
+
+import { ProgressBar, Colors } from 'react-native-paper';
+
+
+import * as Progress from 'react-native-progress';
+import { spring } from 'react-native-reanimated';
+
+
 
 export default function StartScreen({ navigation }) {
     const [modalVisible, setModalVisible] = useState(false);
+
+    var backgroundCol = true;
+
+    const setBlur = () => {
+        modalVisible ? backgroundCol = false : backgroundCol = true;
+    }
+
+    setBlur();
     return (
         <View style={styles.container}>
             <ImageBackground style={
@@ -13,10 +29,27 @@ export default function StartScreen({ navigation }) {
                     height: 900,
                     alignItems: 'center',
                     justifyContent: "center",
-                    top: 0
+                    top: 0,
+                    opacity: !backgroundCol ? 0.4 : 1
                 }
-            } source={require('../assets/Images/background.png')}>
+            } 
+            source={require('../assets/Images/background.png')}>
 
+                <Pressable style={{ top: 125, flexDirection: "row" }} >
+                    <Text style={{fontSize: 20}}>Set Daily Goal : </Text>
+                    <Text style={{color: "rgba(231, 84, 128, 1)", fontSize: 20}}>4.5 </Text>
+                    <Text style={{fontSize: 20}}>Kilometers</Text>
+
+                </Pressable>
+
+                <Progress.Bar style={{top: 150}} color="rgba(65, 70, 61, 1)" borderRadius={20} progress={0.7} width={200} height={50} />
+
+                <Pressable style={{ top: 175, flexDirection: "row" }} >
+                    <Text style={{fontSize: 20}}>You Have Completed : </Text>
+                    <Text style={{color: "rgba(231, 84, 128, 1)", fontSize: 20}}>3.7 </Text>
+                    <Text style={{fontSize: 20}}>Kilometers</Text>
+                </Pressable>
+                
                 <Image style={
                     {
                         position: "relative",
@@ -24,8 +57,13 @@ export default function StartScreen({ navigation }) {
                         height: 200,
                         alignItems: 'center',
                         justifyContent: "center",
-                        top: 0
-                    }} source={require('../assets/Images/loading.gif')}></Image>
+                        top: 200,
+                        //opacity: backgroundCol ? 0.1 : 1
+                    }} source={require('../assets/Images/loading.gif')}></Image> 
+
+
+
+
                 <View style={styles.centeredView}>
                     <Modal
                         animationType="slide"
@@ -36,7 +74,7 @@ export default function StartScreen({ navigation }) {
                         }}>
                         <View style={styles.centeredView}>
                             <View style={styles.modalView}>
-                                <Text style={styles.modalText}>You traveled 3.2km! Congrats!</Text>
+                                <Text style={styles.modalText}>You traveled 3.7 km, Almost reached your daily goal!</Text>
 
                                 <TouchableHighlight
                                     style={{ ...styles.openButton, backgroundColor: '#2196F3' }}
@@ -54,7 +92,7 @@ export default function StartScreen({ navigation }) {
                         onPress={() => {
                             setModalVisible(true);
                         }}>
-                        <Text style={styles.textStyle}>Stop</Text>
+                        <Text style={styles.textStyle}>STOP</Text>
                     </TouchableHighlight>
                 </View>
 
@@ -75,7 +113,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     btnSigninText: {
-        paddingTop: 10,
+        paddingTop: 5,
         alignSelf: "center",
         textAlign: "center",
         fontSize: 18,
@@ -100,7 +138,7 @@ const styles = StyleSheet.create({
         margin: 20,
         backgroundColor: 'white',
         borderRadius: 20,
-        padding: 35,
+        padding: 15,
         alignItems: 'center',
         shadowColor: '#000',
         shadowOffset: {
@@ -116,13 +154,18 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         padding: 10,
         elevation: 2,
+        height: 50,
+        width: 300
     },
     textStyle: {
         color: 'white',
+        fontSize: 25,
         fontWeight: 'bold',
         textAlign: 'center',
     },
     modalText: {
+        fontSize: 20,
+        fontWeight: 'bold',
         marginBottom: 15,
         textAlign: 'center',
     },
